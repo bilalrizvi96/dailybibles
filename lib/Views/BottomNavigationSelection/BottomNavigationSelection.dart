@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../const.dart';
+import '../Settings.dart';
 
 class BottomNavigationSelection extends StatelessWidget {
   BottomNavigationSelection({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class BottomNavigationSelection extends StatelessWidget {
     Home(),
     Music(),
     Book(),
+    SettingScreen(),
   ];
 
   @override

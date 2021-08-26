@@ -32,7 +32,7 @@ class Home extends StatelessWidget {
               ? GestureDetector(
                   onPanUpdate: (details) {
                     // Swiping in right direction.
-                    if (details.delta.dx < 0) {
+                    if (details.delta.dx > 0) {
                       controller.index.value++;
                       controller.visible.value = false;
                     }
@@ -140,7 +140,7 @@ class Home extends StatelessWidget {
                     // }
 
                     // // Swiping in left direction.
-                    if (details.delta.dx > 0) {
+                    if (details.delta.dx < 0) {
                       controller.index.value--;
                       controller.visible.value = true;
                     }

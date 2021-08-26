@@ -8,7 +8,7 @@ import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ReadingController extends GetxController {
-  var result;
+  var result = [].obs;
   // @override
   // void onInit() {
   //   super.onInit();
@@ -16,6 +16,7 @@ class ReadingController extends GetxController {
   // }
 
   calldb(oldTestamentModel selectedtestament, chapter selectedchapter) async {
+    result.clear();
     final databasePath = await getDatabasesPath();
     final path = join(databasePath, "example.db");
     final data = await rootBundle.load(join('assets', 'example.db'));
@@ -29,8 +30,10 @@ class ReadingController extends GetxController {
     ));
     final db = await openDatabase(path);
     const table = 'bible_fts';
-    result = await db.rawQuery(
-        'SELECT content FROM $table WHERE book=\"${selectedtestament.chapterrefname.toString()}\" AND chapter = \"${selectedchapter.length.toString()}\"');
+    result.value.addAll(await db.rawQuery(
+        'SELECT content FROM $table WHERE book=\"${selectedtestament.chapterrefname.toString()}\" AND chapter = \"${selectedchapter.length.toString()}\"'));
+    // result = await db.rawQuery(
+    //     'SELECT content FROM $table WHERE book=\"${selectedtestament.chapterrefname.toString()}\" AND chapter = \"${selectedchapter.length.toString()}\"');
     // db
     //     .query(table,
     //         whereArgs: [int.parse(selectedchapter)],

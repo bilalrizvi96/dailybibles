@@ -11,7 +11,7 @@ class ChapterSeletion extends StatelessWidget {
   ChapterSeletion({Key? key, this.testament}) : super(key: key);
   BookController controller = Get.put(BookController());
 
-  var testament;
+  oldTestamentModel? testament;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +26,7 @@ class ChapterSeletion extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Old Testament",
+              testament!.testement == "new" ? "New Testament" : "Old Testament",
               style: verseheading,
             ),
             SizedBox(
