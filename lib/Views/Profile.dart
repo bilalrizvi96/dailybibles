@@ -1,4 +1,5 @@
 import 'dart:ui';
+
 import 'package:dailybible/Views/BibleVersion.dart';
 import 'package:dailybible/Views/Feedback.dart';
 import 'package:dailybible/Views/Info.dart';
@@ -15,6 +16,8 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool selected = true;
+    var heights = MediaQuery.of(context).size.height;
+    var widths = MediaQuery.of(context).size.width;
     return Scaffold(
         body: SafeArea(
       child: Container(
@@ -26,14 +29,14 @@ class Profile extends StatelessWidget {
               child: IconButton(
                   onPressed: () {},
                   icon: Icon(Icons.arrow_back,
-                      size: 30, color: Color(0xff5C5C78))),
+                      size: 25, color: Color(0xff5C5C78))),
             ),
             SizedBox(height: MediaQuery.of(context).size.height / 20),
             Center(
                 child: Text(
               "Setting",
               style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.width / 7,
+                  fontSize: MediaQuery.of(context).size.width / 12,
                   color: Color(0xff393133)),
             )),
             SizedBox(height: MediaQuery.of(context).size.height / 27),
@@ -42,8 +45,8 @@ class Profile extends StatelessWidget {
                 Get.to(() => ReminderAlarm());
               },
               child: Container(
-                width: MediaQuery.of(context).size.width / 1.1,
-                height: MediaQuery.of(context).size.width / 6,
+                width: widths / 1.3,
+                height: heights / 15,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(
@@ -65,7 +68,7 @@ class Profile extends StatelessWidget {
                     Text(
                       "Reminder Alarm",
                       style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 12,
+                          fontSize: MediaQuery.of(context).size.width / 26,
                           color: Color(0xff393133)),
                     )
                   ],
@@ -78,8 +81,8 @@ class Profile extends StatelessWidget {
                 Get.to(() => Notifications());
               },
               child: Container(
-                width: MediaQuery.of(context).size.width / 1.1,
-                height: MediaQuery.of(context).size.width / 6,
+                width: widths / 1.3,
+                height: heights / 15,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
@@ -102,7 +105,7 @@ class Profile extends StatelessWidget {
                     Text(
                       "Notifications",
                       style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 12,
+                          fontSize: MediaQuery.of(context).size.width / 26,
                           color: Color(0xffFFFFFF)),
                     )
                   ],
@@ -115,8 +118,8 @@ class Profile extends StatelessWidget {
                 Get.to(() => Languages());
               },
               child: Container(
-                width: MediaQuery.of(context).size.width / 1.1,
-                height: MediaQuery.of(context).size.width / 6,
+                width: widths / 1.3,
+                height: heights / 15,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
@@ -138,7 +141,7 @@ class Profile extends StatelessWidget {
                     Text(
                       "Languages",
                       style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 12,
+                          fontSize: MediaQuery.of(context).size.width / 26,
                           color: Color(0xff393133)),
                     )
                   ],
@@ -151,8 +154,8 @@ class Profile extends StatelessWidget {
                 Get.to(() => BibleVersion());
               },
               child: Container(
-                width: MediaQuery.of(context).size.width / 1.1,
-                height: MediaQuery.of(context).size.width / 6,
+                width: widths / 1.3,
+                height: heights / 15,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
@@ -174,7 +177,7 @@ class Profile extends StatelessWidget {
                     Text(
                       "Bible Versions",
                       style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 12,
+                          fontSize: MediaQuery.of(context).size.width / 26,
                           color: Color(0xff393133)),
                     )
                   ],
@@ -187,8 +190,8 @@ class Profile extends StatelessWidget {
                 Get.to(() => feedback());
               },
               child: Container(
-                width: MediaQuery.of(context).size.width / 1.1,
-                height: MediaQuery.of(context).size.width / 6,
+                width: widths / 1.3,
+                height: heights / 15,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
@@ -210,7 +213,7 @@ class Profile extends StatelessWidget {
                     Text(
                       "FeedBack",
                       style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 12,
+                          fontSize: MediaQuery.of(context).size.width / 26,
                           color: Color(0xff393133)),
                     )
                   ],
@@ -223,8 +226,8 @@ class Profile extends StatelessWidget {
                 Get.to(() => Info());
               },
               child: Container(
-                width: MediaQuery.of(context).size.width / 1.1,
-                height: MediaQuery.of(context).size.width / 6,
+                width: widths / 1.3,
+                height: heights / 15,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     border: Border.all(
@@ -246,7 +249,7 @@ class Profile extends StatelessWidget {
                     Text(
                       "Info",
                       style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.width / 12,
+                          fontSize: MediaQuery.of(context).size.width / 26,
                           color: Color(0xff393133)),
                     )
                   ],
